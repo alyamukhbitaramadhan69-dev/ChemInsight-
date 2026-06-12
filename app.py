@@ -70,6 +70,7 @@ menu = st.sidebar.radio(
         "📁 Upload Data CSV",
         "📈 Visualisasi Grafik",
         "📋 Statistik Data"
+    ]
         
 # =====================
 # BERANDA
@@ -160,7 +161,7 @@ if menu == "🏠 Beranda":
     Menampilkan grafik data secara interaktif.
 
     #### 📋 Statistik Data
-
+    ]
     Menampilkan:
     - Mean
     - Median
