@@ -4,6 +4,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # =====================
+# KONFIGURASI HALAMAN
+# =====================
+
+st.set_page_config(
+    page_title="ChemInsight",
+    page_icon="🧪",
+    layout="wide"
+)
+
+# =====================
 # CUSTOM BACKGROUND
 # =====================
 
@@ -44,21 +54,6 @@ p, label, div {
 """, unsafe_allow_html=True)
 
 # =====================
-# KONFIGURASI HALAMAN
-# =====================
-
-st.set_page_config(
-    page_title="ChemInsight",
-    page_icon="🧪",
-    layout="wide"
-)
-st.set_page_config(
-    page_title="ChemInsight",
-    page_icon="🧪",
-    layout="wide"
-)
-
-# =====================
 # SIDEBAR
 # =====================
 
@@ -75,16 +70,12 @@ menu = st.sidebar.radio(
         "📁 Upload Data CSV",
         "📈 Visualisasi Grafik",
         "📋 Statistik Data"
-    ]
-)
-
+        
 # =====================
 # BERANDA
 # =====================
 
 if menu == "🏠 Beranda":
-
-    if menu == "🏠 Beranda":
 
     # =====================
     # BANNER
@@ -99,6 +90,85 @@ if menu == "🏠 Beranda":
     """)
 
     st.markdown("---")
+
+    # =====================
+    # KARTU FITUR
+    # =====================
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.info("📊 Perhitungan pH")
+        st.info("⚗️ Molaritas & Normalitas")
+        st.info("💧 Pengenceran Larutan")
+        st.info("🧫 Analisis Titrasi")
+
+    with col2:
+        st.info("📁 Upload Data CSV")
+        st.info("📈 Visualisasi Grafik")
+        st.info("📋 Statistik Data Laboratorium")
+
+    st.markdown("---")
+
+    st.markdown("""
+    ## Selamat Datang di ChemInsight
+
+    ChemInsight adalah aplikasi analisis dan perhitungan kimia berbasis web yang membantu pengguna melakukan perhitungan kimia, analisis data laboratorium, dan visualisasi hasil eksperimen secara cepat dan akurat.
+
+    Aplikasi ini menyediakan berbagai fitur yang mendukung pembelajaran, penelitian, dan praktikum laboratorium.
+
+    ---
+
+    ### 🔍 Fitur Utama
+
+    #### 📊 Perhitungan pH
+    Menghitung pH, pOH, konsentrasi H+ dan OH-.
+
+    **Rumus Asam**
+    - pH = -log(H+)
+
+    **Rumus Basa**
+    - pOH = -log(OH-)
+    - pH = 14 - pOH
+
+    #### ⚗️ Molaritas dan Normalitas
+
+    Menghitung konsentrasi larutan.
+
+    **Rumus**
+    - M = n / V
+    - N = ekivalen / V
+
+    #### 💧 Pengenceran Larutan
+
+    Menggunakan persamaan:
+
+    M1V1 = M2V2
+
+    #### 🧫 Analisis Titrasi
+
+    Menghitung konsentrasi larutan melalui titrasi.
+
+    MaVa = MbVb
+
+    #### 📁 Upload Data CSV
+
+    Membaca dan menampilkan data eksperimen.
+
+    #### 📈 Visualisasi Grafik
+
+    Menampilkan grafik data secara interaktif.
+
+    #### 📋 Statistik Data
+
+    Menampilkan:
+    - Mean
+    - Median
+    - Modus
+    - Standar Deviasi
+    - Nilai Minimum
+    - Nilai Maksimum
+    """)
 
     # =====================
     # KARTU FITUR
@@ -186,11 +256,11 @@ elif menu == "📊 Perhitungan pH":
 
     **Rumus Larutan Asam:**
 
-    pH = -log[H⁺]
+    pH = -log(H+)
 
     **Rumus Larutan Basa:**
 
-    pOH = -log[OH⁻]
+    pOH = -log(OH-)
 
     pH = 14 - pOH
     """)
