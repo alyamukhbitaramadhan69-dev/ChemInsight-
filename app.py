@@ -218,7 +218,7 @@ if menu == "🏠 Beranda":
     #### 💧 Pengenceran Larutan
     Menggunakan persamaan:
 
-    M₁V₁ = M₂V₂
+    M1V1 = M2V2
 
     #### 🧫 Analisis Titrasi
     Menghitung konsentrasi larutan melalui titrasi.
