@@ -3,6 +3,55 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+# =====================
+# CUSTOM BACKGROUND
+# =====================
+
+st.markdown("""
+<style>
+
+.stApp {
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e3a8a 40%,
+        #7c3aed 100%
+    );
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white !important;
+}
+
+p, label, div {
+    color: white !important;
+}
+
+[data-testid="stSidebar"] {
+    background-color: rgba(15, 23, 42, 0.95);
+}
+
+.stButton > button {
+    width: 100%;
+    border-radius: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# =====================
+# KONFIGURASI HALAMAN
+# =====================
+
+st.set_page_config(
+    page_title="ChemInsight",
+    page_icon="🧪",
+    layout="wide"
+)
 st.set_page_config(
     page_title="ChemInsight",
     page_icon="🧪",
@@ -35,13 +84,48 @@ menu = st.sidebar.radio(
 
 if menu == "🏠 Beranda":
 
-    st.title("🧪 ChemInsight")
+    if menu == "🏠 Beranda":
+
+    # =====================
+    # BANNER
+    # =====================
 
     st.markdown("""
-    ### Selamat Datang di ChemInsight
+    # 🧪 ChemInsight
+
+    ### Smart Chemistry Calculator & Laboratory Data Analysis
+
+    Membantu perhitungan kimia, analisis data laboratorium, dan visualisasi grafik secara cepat dan akurat.
+    """)
+
+    st.markdown("---")
+
+    # =====================
+    # KARTU FITUR
+    # =====================
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.info("📊 Perhitungan pH")
+        st.info("⚗️ Molaritas & Normalitas")
+        st.info("💧 Pengenceran Larutan")
+        st.info("🧫 Analisis Titrasi")
+
+    with col2:
+        st.info("📁 Upload Data CSV")
+        st.info("📈 Visualisasi Grafik")
+        st.info("📋 Statistik Data Laboratorium")
+
+    st.markdown("---")
+
+    st.markdown("""
+    ## Selamat Datang di ChemInsight
 
     ChemInsight adalah aplikasi analisis dan perhitungan kimia berbasis web yang membantu pengguna melakukan perhitungan kimia, analisis data laboratorium, dan visualisasi hasil eksperimen secara cepat dan akurat.
 
+    Aplikasi ini menyediakan berbagai fitur yang mendukung pembelajaran, penelitian, dan praktikum laboratorium.
+    """)
     ---
     ### 🔍 Fitur Utama
 
