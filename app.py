@@ -85,24 +85,87 @@ if menu == "🏠 Beranda":
     - Nilai Minimum
     - Nilai Maksimum
     """)
-
+    
 # =====================
-# PH
+# PERHITUNGAN PH
 # =====================
 
 elif menu == "📊 Perhitungan pH":
 
     st.header("📊 Perhitungan pH")
 
-    h = st.number_input(
-        "Masukkan Konsentrasi H+ (mol/L)",
-        min_value=0.0000001,
-        format="%f"
+    st.markdown("""
+    ### Tentang Perhitungan pH
+
+    pH digunakan untuk menentukan tingkat keasaman atau kebasaan suatu larutan.
+
+    **Rumus Larutan Asam:**
+
+    pH = -log[H⁺]
+
+    **Rumus Larutan Basa:**
+
+    pOH = -log[OH⁻]
+
+    pH = 14 - pOH
+    """)
+
+    jenis = st.selectbox(
+        "Pilih Jenis Larutan",
+        ["Asam", "Basa"]
     )
 
-    if st.button("Hitung pH"):
-        ph = -np.log10(h)
-        st.success(f"pH = {ph:.2f}")
+    if jenis == "Asam":
+
+        st.subheader("🧪 Perhitungan pH Asam")
+
+        h = st.number_input(
+            "Masukkan Konsentrasi H⁺ (mol/L)",
+            min_value=0.000000000001,
+            value=0.001000,
+            format="%f"
+        )
+
+        if st.button("Hitung pH Asam"):
+
+            ph = -np.log10(h)
+
+            # Membatasi nilai pH antara 0 - 14
+            ph = max(0, min(ph, 14))
+
+            st.success(f"Nilai pH = {ph:.2f}")
+
+            if ph < 7:
+                st.info("Larutan bersifat Asam")
+            elif ph == 7:
+                st.info("Larutan bersifat Netral")
+
+    else:
+
+        st.subheader("🧪 Perhitungan pH Basa")
+
+        oh = st.number_input(
+            "Masukkan Konsentrasi OH⁻ (mol/L)",
+            min_value=0.000000000001,
+            value=0.001000,
+            format="%f"
+        )
+
+        if st.button("Hitung pH Basa"):
+
+            poh = -np.log10(oh)
+
+            ph = 14 - poh
+
+            # Membatasi nilai pH antara 0 - 14
+            ph = max(0, min(ph, 14))
+
+            st.success(f"Nilai pH = {ph:.2f}")
+
+            if ph > 7:
+                st.info("Larutan bersifat Basa")
+            elif ph == 7:
+                st.info("Larutan bersifat Netral")
 
 # =====================
 # MOLARITAS
