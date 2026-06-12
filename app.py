@@ -129,13 +129,14 @@ if menu == "🏠 Beranda":
     ---
     ### 🔍 Fitur Utama
 
-    #### 📊 Perhitungan pH
-    Menghitung pH, pOH, konsentrasi H⁺ dan OH⁻.
+    ### Perhitungan pH
+    Rumus Asam:
+    pH = -log(H+)
 
-    Rumus:
-    - pH = -log[H⁺]
-    - pOH = -log[OH⁻]
-    - pH + pOH = 14
+    Rumus Basa:
+    pOH = -log(OH-)
+
+    pH + pOH = 14
 
     #### ⚗️ Molaritas dan Normalitas
     Menghitung konsentrasi larutan.
