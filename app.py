@@ -336,17 +336,31 @@ elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
 
-    st.write("### Petunjuk Upload Data")
-    st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
+    st.markdown(
+        """
+        <div style="
+            background-color: rgba(255,255,255,0.1);
+            padding:15px;
+            border-radius:10px;
+            color:white;
+        ">
+        <h3>Petunjuk Upload Data</h3>
 
-    st.write("Contoh format CSV:")
+        Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
-    st.code(
-        "No,Sampel,Konsentrasi,pH\n"
-        "1,A,0.10,3.5\n"
-        "2,B,0.20,4.1\n"
-        "3,C,0.30,4.8",
-        language="csv"
+        <br><br>
+
+        <b>Contoh format CSV:</b>
+
+        <pre>
+No,Sampel,Konsentrasi,pH
+1,A,0.10,3.5
+2,B,0.20,4.1
+3,C,0.30,4.8
+        </pre>
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     file = st.file_uploader(
@@ -359,12 +373,12 @@ elif menu == "📁 Upload Data CSV":
         try:
             df = pd.read_csv(file)
 
-            st.success("File berhasil diupload!")
+            st.success("✅ File berhasil diupload")
             st.dataframe(df)
 
         except Exception as e:
             st.error(f"Error membaca file: {e}")
-
+            
 # =====================
 # VISUALISASI
 # =====================
