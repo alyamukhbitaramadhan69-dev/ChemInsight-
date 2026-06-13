@@ -308,50 +308,34 @@ elif menu == "🧫 Analisis Titrasi":
 
     st.markdown("""
     ### Perhitungan Normalitas dengan Titrasi
-    vb = st.number_input(
-        "Volume Basa (mL)",
+
+    Rumus:
+
+    N₁V₁ = N₂V₂
+    """)
+
+    vtitran = st.number_input(
+        "Volume Titran (mL)",
         min_value=0.0
     )
 
-    nb = st.number_input(
-        "Normalitas Basa (N)",
+    ntitran = st.number_input(
+        "Normalitas Titran (N)",
         min_value=0.0
     )
 
-    va = st.number_input(
-        "Volume Asam (mL)",
+    vtitrat = st.number_input(
+        "Volume Titrat (mL)",
         min_value=0.0001
     )
 
-    if st.button("Hitung Normalitas Asam"):
+    if st.button("Hitung Normalitas Titrat"):
 
-        na = (nb * vb) / va
+        ntitrat = (ntitran * vtitran) / vtitrat
 
         st.success(
-            f"Normalitas Asam = {na:.4f} N"
+            f"Normalitas Titrat = {ntitrat:.4f} N"
         )
-
-# =====================
-# UPLOAD CSV
-# =====================
-
-elif menu == "📁 Upload Data CSV":
-
-    st.header("📁 Upload Data CSV")
-
-    file = st.file_uploader(
-        "Upload File CSV",
-        type=["csv"]
-    )
-
-    if file is not None:
-
-        try:
-            df = pd.read_csv(file)
-            st.dataframe(df)
-        except Exception as e:
-            st.error(f"Error membaca file: {e}")
-
 # =====================
 # VISUALISASI
 # =====================
