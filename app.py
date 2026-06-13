@@ -336,28 +336,28 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
+    st.markdown("""
+### 📝 Petunjuk Upload Data
 
-    st.subheader("📝 Petunjuk Upload Data")
+Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
-    st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
+### 📋 Contoh Format CSV
 
-    st.write("### Contoh Format CSV")
+| No | Sampel | Konsentrasi | pH |
+|----|--------|-------------|----|
+| 1 | A | 0.10 | 3.5 |
+| 2 | B | 0.20 | 4.1 |
+| 3 | C | 0.30 | 4.8 |
 
-    st.code(
-        "No,Sampel,Konsentrasi,pH\n"
-        "1,A,0.10,3.5\n"
-        "2,B,0.20,4.1\n"
-        "3,C,0.30,4.8",
-        language="csv"
-    )
+### 📌 Keterangan
 
-    st.write("### Keterangan")
-    st.write("• No = Nomor data")
-    st.write("• Sampel = Nama sampel")
-    st.write("• Konsentrasi = Konsentrasi larutan")
-    st.write("• pH = Nilai pH hasil pengukuran")
+- **No** = Nomor data
+- **Sampel** = Nama sampel
+- **Konsentrasi** = Konsentrasi larutan
+- **pH** = Nilai pH hasil pengukuran
 
-    st.write("Setelah file diupload, data akan ditampilkan dalam bentuk tabel.")
+Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
+""")
 
     file = st.file_uploader(
         "Upload File CSV",
