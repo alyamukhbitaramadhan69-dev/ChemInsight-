@@ -336,63 +336,24 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
-    st.markdown("""
-<div style="
-background-color: rgba(255,255,255,0.95);
-padding: 15px;
-border-radius: 10px;
-color: black;
-">
+    st.subheader("📝 Petunjuk Upload Data")
 
-<h3>📝 Petunjuk Upload Data</h3>
+    st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
 
-<p>Upload file CSV yang berisi data hasil praktikum atau eksperimen.</p>
+    st.table({
+    "No": [1, 2, 3],
+    "Sampel": ["A", "B", "C"],
+    "Konsentrasi": [0.10, 0.20, 0.30],
+    "pH": [3.5, 4.1, 4.8]
+    })
 
-<h3>📋 Contoh Format CSV</h3>
-
-<table style="width:100%; border-collapse: collapse;">
-<tr>
-<th style="border:1px solid black; padding:8px;">No</th>
-<th style="border:1px solid black; padding:8px;">Sampel</th>
-<th style="border:1px solid black; padding:8px;">Konsentrasi</th>
-<th style="border:1px solid black; padding:8px;">pH</th>
-</tr>
-
-<tr>
-<td style="border:1px solid black; padding:8px;">1</td>
-<td style="border:1px solid black; padding:8px;">A</td>
-<td style="border:1px solid black; padding:8px;">0.10</td>
-<td style="border:1px solid black; padding:8px;">3.5</td>
-</tr>
-
-<tr>
-<td style="border:1px solid black; padding:8px;">2</td>
-<td style="border:1px solid black; padding:8px;">B</td>
-<td style="border:1px solid black; padding:8px;">0.20</td>
-<td style="border:1px solid black; padding:8px;">4.1</td>
-</tr>
-
-<tr>
-<td style="border:1px solid black; padding:8px;">3</td>
-<td style="border:1px solid black; padding:8px;">C</td>
-<td style="border:1px solid black; padding:8px;">0.30</td>
-<td style="border:1px solid black; padding:8px;">4.8</td>
-</tr>
-</table>
-
-<h3>📌 Keterangan</h3>
-
-<ul>
-<li>No = Nomor data</li>
-<li>Sampel = Nama sampel</li>
-<li>Konsentrasi = Konsentrasi larutan</li>
-<li>pH = Nilai pH hasil pengukuran</li>
-</ul>
-
-<p>Setelah file diupload, data akan ditampilkan dalam bentuk tabel.</p>
-
-</div>
-""", unsafe_allow_html=True)
+    st.write("""
+    **Keterangan:**
+    - No = Nomor data
+    - Sampel = Nama sampel
+    - Konsentrasi = Konsentrasi larutan
+    - pH = Nilai pH hasil pengukuran
+    """)
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
