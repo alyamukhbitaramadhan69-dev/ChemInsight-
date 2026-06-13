@@ -336,49 +336,18 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
-    st.markdown("""
-<h3>📋 Contoh Format CSV</h3>
+    st.subheader("📋 Contoh Format CSV")
 
-<table style="border-collapse: collapse; width: 100%; background-color: white; color: black;">
-    <tr>
-        <th style="border: 2px solid black; padding: 8px;">No</th>
-        <th style="border: 2px solid black; padding: 8px;">Sampel</th>
-        <th style="border: 2px solid black; padding: 8px;">Konsentrasi</th>
-        <th style="border: 2px solid black; padding: 8px;">pH</th>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">1</td>
-        <td style="border: 2px solid black; padding: 8px;">A</td>
-        <td style="border: 2px solid black; padding: 8px;">0.10</td>
-        <td style="border: 2px solid black; padding: 8px;">3.5</td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">2</td>
-        <td style="border: 2px solid black; padding: 8px;">B</td>
-        <td style="border: 2px solid black; padding: 8px;">0.20</td>
-        <td style="border: 2px solid black; padding: 8px;">4.1</td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">3</td>
-        <td style="border: 2px solid black; padding: 8px;">C</td>
-        <td style="border: 2px solid black; padding: 8px;">0.30</td>
-        <td style="border: 2px solid black; padding: 8px;">4.8</td>
-    </tr>
-</table>
-""", unsafe_allow_html=True)
-    st.markdown("""
-### 📝 Petunjuk Upload Data
+contoh_df = pd.DataFrame({
+    "No": [1, 2, 3],
+    "Sampel": ["A", "B", "C"],
+    "Konsentrasi": [0.10, 0.20, 0.30],
+    "pH": [3.5, 4.1, 4.8]
+})
 
-Upload file CSV yang berisi data hasil praktikum atau eksperimen.
+st.table(contoh_df)
 
-### 📋 Contoh Format CSV
-
-| No | Sampel | Konsentrasi | pH |
-|----|--------|-------------|----|
-| 1 | A | 0.10 | 3.5 |
-| 2 | B | 0.20 | 4.1 |
-| 3 | C | 0.30 | 4.8 |
-
+st.markdown("""
 ### 📌 Keterangan
 
 - **No** = Nomor data
@@ -388,36 +357,6 @@ Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
 Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
 """)
-st.markdown("""
-<h3>📋 Contoh Format CSV</h3>
-
-<table style="border-collapse: collapse; width: 100%; background-color: white; color: black;">
-    <tr>
-        <th style="border: 2px solid black; padding: 8px;">No</th>
-        <th style="border: 2px solid black; padding: 8px;">Sampel</th>
-        <th style="border: 2px solid black; padding: 8px;">Konsentrasi</th>
-        <th style="border: 2px solid black; padding: 8px;">pH</th>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">1</td>
-        <td style="border: 2px solid black; padding: 8px;">A</td>
-        <td style="border: 2px solid black; padding: 8px;">0.10</td>
-        <td style="border: 2px solid black; padding: 8px;">3.5</td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">2</td>
-        <td style="border: 2px solid black; padding: 8px;">B</td>
-        <td style="border: 2px solid black; padding: 8px;">0.20</td>
-        <td style="border: 2px solid black; padding: 8px;">4.1</td>
-    </tr>
-    <tr>
-        <td style="border: 2px solid black; padding: 8px;">3</td>
-        <td style="border: 2px solid black; padding: 8px;">C</td>
-        <td style="border: 2px solid black; padding: 8px;">0.30</td>
-        <td style="border: 2px solid black; padding: 8px;">4.8</td>
-    </tr>
-</table>
-""", unsafe_allow_html=True)
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
