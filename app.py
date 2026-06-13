@@ -28,55 +28,84 @@ st.markdown("""
     );
 }
 
-/* Kartu utama */
-.block-container {
-    background-color: rgba(255,255,255,0.92);
-    padding: 2rem;
-    border-radius: 20px;
+/* Judul */
+h1, h2, h3, h4, h5, h6 {
+    color: #FDE68A !important;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    font-weight: bold;
 }
 
-/* Semua teks utama */
-h1, h2, h3, h4, h5, h6,
-p, li, span, label {
-    color: black !important;
+/* Teks */
+p, label, li, span {
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    font-size: 16px;
+}
+
+/* Markdown */
+.stMarkdown {
+    color: #FFFFFF !important;
 }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background-color: #0f172a;
+    background-color: rgba(15, 23, 42, 0.95);
 }
 
-/* Sidebar text */
+/* Tulisan sidebar */
 [data-testid="stSidebar"] * {
     color: white !important;
 }
 
-/* Input */
-input {
-    color: black !important;
-}
-
 /* Tombol */
 .stButton > button {
+    width: 100%;
+    border-radius: 12px;
     background-color: #2563eb;
-    color: white;
-    border-radius: 10px;
+    color: white !important;
+    border: none;
     font-weight: bold;
 }
 
-/* Tabel */
+/* Input angka */
+.stNumberInput input {
+    background-color: white !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+/* Selectbox */
+.stSelectbox div[data-baseweb="select"] {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* File uploader */
+[data-testid="stFileUploader"] {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Tabel statistik */
 table {
+    background-color: rgba(255,255,255,0.95) !important;
     color: black !important;
 }
 
 /* Dataframe */
 [data-testid="stDataFrame"] {
-    background-color: white;
+    background-color: white !important;
+    border-radius: 10px;
+}
+
+/* Box info, success, warning */
+div[data-baseweb="notification"] {
+    font-weight: bold;
 }
 
 </style>
-""", unsafe_allow_html=True)
-# =====================
+""", unsafe_allow_html=True)# =====================
 # SIDEBAR
 # =====================
 
