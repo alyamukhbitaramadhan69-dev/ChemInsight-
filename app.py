@@ -20,6 +20,8 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* CSS BARU DITEMPEL DI SINI */
+
 .stApp {
     background: linear-gradient(
         135deg,
@@ -29,30 +31,16 @@ st.markdown("""
     );
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: white !important;
-}
-
-p, label, div {
-    color: white !important;
-}
-
-[data-testid="stSidebar"] {
-    background-color: rgba(15, 23, 42, 0.95);
-}
-
-.stButton > button {
-    width: 100%;
-    border-radius: 12px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    font-weight: bold;
-}
+/* dst ... seluruh CSS yang saya kirim */
 
 </style>
 """, unsafe_allow_html=True)
 
+# =====================
+# SIDEBAR
+# =====================
+
+st.sidebar.title("🧪 ChemInsight")
 # =====================
 # SIDEBAR
 # =====================
