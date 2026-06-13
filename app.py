@@ -335,7 +335,18 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
+    st.info("""
+Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
+Contoh format:
+
+No,Sampel,Konsentrasi,pH
+1,A,0.10,3.5
+2,B,0.20,4.1
+3,C,0.30,4.8
+
+File harus berformat .csv
+""")
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
@@ -358,7 +369,26 @@ elif menu == "📁 Upload Data CSV":
 elif menu == "📈 Visualisasi Grafik":
 
     st.header("📈 Visualisasi Grafik")
+    st.info("""
+Upload file CSV yang memiliki minimal 2 kolom numerik untuk dibuat grafik.
 
+Contoh format:
+
+Waktu,Suhu
+0,25
+10,30
+20,35
+30,40
+
+atau
+
+Konsentrasi,Absorbansi
+0.1,0.15
+0.2,0.31
+0.3,0.47
+
+Pilih kolom yang akan digunakan sebagai sumbu X dan sumbu Y.
+""")
     file = st.file_uploader(
         "Upload CSV",
         type=["csv"]
@@ -409,7 +439,25 @@ elif menu == "📈 Visualisasi Grafik":
 elif menu == "📋 Statistik Data":
 
     st.header("📋 Statistik Data Laboratorium")
+    st.info("""
+Upload file CSV yang berisi data numerik untuk dianalisis.
 
+Contoh format:
+
+Sampel,Kadar_Fe,pH
+A,12.5,3.4
+B,13.1,3.6
+C,12.8,3.5
+D,13.4,3.7
+
+Aplikasi akan menampilkan:
+• Mean
+• Median
+• Standar Deviasi
+• Varians
+• Nilai Minimum
+• Nilai Maksimum
+""")
     file = st.file_uploader(
         "Upload CSV Statistik",
         type=["csv"]
