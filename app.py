@@ -308,18 +308,6 @@ elif menu == "🧫 Analisis Titrasi":
 
     st.markdown("""
     ### Perhitungan Normalitas dengan Titrasi
-
-    Menggunakan rumus:
-
-    N₁V₁ = N₂V₂
-
-    Keterangan:
-    - N₁ = Normalitas Asam
-    - V₁ = Volume Asam (mL)
-    - N₂ = Normalitas Basa
-    - V₂ = Volume Basa (mL)
-    """)
-
     vb = st.number_input(
         "Volume Basa (mL)",
         min_value=0.0
