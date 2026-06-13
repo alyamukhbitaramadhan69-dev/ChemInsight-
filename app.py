@@ -16,11 +16,8 @@ st.set_page_config(
 # =====================
 # CUSTOM BACKGROUND
 # =====================
-
 st.markdown("""
 <style>
-
-/* CSS BARU DITEMPEL DI SINI */
 
 .stApp {
     background: linear-gradient(
@@ -31,16 +28,54 @@ st.markdown("""
     );
 }
 
-/* dst ... seluruh CSS yang saya kirim */
+/* Kartu utama */
+.block-container {
+    background-color: rgba(255,255,255,0.92);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+/* Semua teks utama */
+h1, h2, h3, h4, h5, h6,
+p, li, span, label {
+    color: black !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #0f172a;
+}
+
+/* Sidebar text */
+[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* Input */
+input {
+    color: black !important;
+}
+
+/* Tombol */
+.stButton > button {
+    background-color: #2563eb;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Tabel */
+table {
+    color: black !important;
+}
+
+/* Dataframe */
+[data-testid="stDataFrame"] {
+    background-color: white;
+}
 
 </style>
 """, unsafe_allow_html=True)
-
-# =====================
-# SIDEBAR
-# =====================
-
-st.sidebar.title("🧪 ChemInsight")
 # =====================
 # SIDEBAR
 # =====================
