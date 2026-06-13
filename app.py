@@ -336,27 +336,31 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
-    st.subheader("📋 Contoh Format CSV")
+    st.subheader("📝 Petunjuk Upload Data")
 
-contoh_df = pd.DataFrame({
+st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
+
+st.subheader("📋 Contoh Format CSV")
+
+contoh_data = pd.DataFrame({
     "No": [1, 2, 3],
     "Sampel": ["A", "B", "C"],
     "Konsentrasi": [0.10, 0.20, 0.30],
     "pH": [3.5, 4.1, 4.8]
 })
 
-st.table(contoh_df)
+st.table(contoh_data)
 
-st.markdown("""
-### 📌 Keterangan
+st.subheader("📌 Keterangan")
 
-- **No** = Nomor data
-- **Sampel** = Nama sampel
-- **Konsentrasi** = Konsentrasi larutan
-- **pH** = Nilai pH hasil pengukuran
-
-Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
+st.write("""
+- **No** : Nomor data
+- **Sampel** : Nama sampel
+- **Konsentrasi** : Konsentrasi larutan
+- **pH** : Nilai pH hasil pengukuran
 """)
+
+st.info("Setelah file diupload, data akan ditampilkan dalam bentuk tabel.")
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
