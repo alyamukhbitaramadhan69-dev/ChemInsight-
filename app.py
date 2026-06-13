@@ -23,28 +23,24 @@ st.markdown("""
     background: linear-gradient(
         135deg,
         #0f172a 0%,
-        #1e3a8a 40%,
+        #1e3a8a 35%,
+        #4f46e5 70%,
         #7c3aed 100%
     );
+    background-attachment: fixed;
 }
 
 /* Judul */
 h1, h2, h3, h4, h5, h6 {
-    color: #FDE68A !important;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    color: #FFFFFF !important;
     font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
 
 /* Teks */
 p, label, li, span {
     color: #FFFFFF !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-    font-size: 16px;
-}
-
-/* Markdown */
-.stMarkdown {
-    color: #FFFFFF !important;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
 /* Sidebar */
@@ -67,17 +63,24 @@ p, label, li, span {
     font-weight: bold;
 }
 
-/* Input angka */
-.stNumberInput input {
-    background-color: white !important;
+/* Input */
+.stNumberInput input,
+.stTextInput input {
+    background-color: rgba(255,255,255,0.95) !important;
     color: black !important;
     font-weight: bold;
 }
 
 /* Selectbox */
 .stSelectbox div[data-baseweb="select"] {
-    background-color: white !important;
+    background-color: rgba(255,255,255,0.95) !important;
     color: black !important;
+}
+
+/* Dataframe */
+[data-testid="stDataFrame"] {
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
 }
 
 /* File uploader */
@@ -87,25 +90,8 @@ p, label, li, span {
     padding: 10px;
 }
 
-/* Tabel statistik */
-table {
-    background-color: rgba(255,255,255,0.95) !important;
-    color: black !important;
-}
-
-/* Dataframe */
-[data-testid="stDataFrame"] {
-    background-color: white !important;
-    border-radius: 10px;
-}
-
-/* Box info, success, warning */
-div[data-baseweb="notification"] {
-    font-weight: bold;
-}
-
 </style>
-""", unsafe_allow_html=True)# =====================
+""", unsafe_allow_html=True)
 # SIDEBAR
 # =====================
 
