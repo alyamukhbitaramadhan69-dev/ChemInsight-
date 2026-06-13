@@ -336,16 +336,16 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
+    st.write("### Contoh Format CSV")
 
-    st.info("""
-Upload file CSV yang berisi data hasil praktikum atau eksperimen.
-
-Contoh format CSV:
-
-No,Sampel,Konsentrasi,pH
+st.code(
+"""No,Sampel,Konsentrasi,pH
 1,A,0.10,3.5
 2,B,0.20,4.1
-3,C,0.30,4.8
+3,C,0.30,4.8""",
+language="csv"
+)
+
 
 Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
 """)
@@ -380,7 +380,7 @@ Upload file CSV yang memiliki minimal 2 kolom numerik untuk dibuat grafik.
 
 Contoh format:
 
-Waktu,Suhu
+Waktu,Suhu:
 0,25
 10,30
 20,35
@@ -388,7 +388,7 @@ Waktu,Suhu
 
 atau
 
-Konsentrasi,Absorbansi
+Konsentrasi,Absorbansi:
 0.1,0.15
 0.2,0.31
 0.3,0.47
@@ -452,11 +452,11 @@ Upload file CSV yang berisi data numerik untuk dianalisis.
 
 Contoh format:
 
-Sampel,Kadar_Fe,pH
-A,12.5,3.4
-B,13.1,3.6
-C,12.8,3.5
-D,13.4,3.7
+Sampel,Kadar Fe,pH:
+A:12.5,3.4
+B:13.1,3.6
+C:12.8,3.5
+D:13.4,3.7
 
 Aplikasi akan menampilkan:
 • Mean
