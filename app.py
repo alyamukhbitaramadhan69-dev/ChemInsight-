@@ -339,11 +339,13 @@ elif menu == "📁 Upload Data CSV":
     st.write("### Petunjuk Upload Data")
     st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
 
+    st.write("Contoh format CSV:")
+
     st.code(
-"""No,Sampel,Konsentrasi,pH
-1,A,0.10,3.5
-2,B,0.20,4.1
-3,C,0.30,4.8""",
+        "No,Sampel,Konsentrasi,pH\n"
+        "1,A,0.10,3.5\n"
+        "2,B,0.20,4.1\n"
+        "3,C,0.30,4.8",
         language="csv"
     )
 
@@ -356,6 +358,8 @@ elif menu == "📁 Upload Data CSV":
 
         try:
             df = pd.read_csv(file)
+
+            st.success("File berhasil diupload!")
             st.dataframe(df)
 
         except Exception as e:
