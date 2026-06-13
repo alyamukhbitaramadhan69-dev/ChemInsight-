@@ -355,17 +355,9 @@ elif menu == "📁 Upload Data CSV":
     - pH = Nilai pH hasil pengukuran
     """)
     file = st.file_uploader(
-        "Upload File CSV",
-        type=["csv"]
-    )
-
-    file = st.file_uploader(
-        "Upload File CSV",
-        type=["csv"]
-    )
-    file = st.file_uploader(
-        "Upload File CSV",
-        type=["csv"]
+    "Upload File CSV",
+    type=["csv"],
+    key="upload_csv"
     )
 
     if file is not None:
@@ -410,10 +402,11 @@ elif menu == "📈 Visualisasi Grafik":
     Setelah file diupload, pilih kolom X dan Y untuk menampilkan grafik.
     """)
     file = st.file_uploader(
-        "Upload CSV",
-        type=["csv"]
+    "Upload CSV",
+    type=["csv"],
+    key="visualisasi_csv"
     )
-
+    
     if file is not None:
 
         try:
@@ -489,10 +482,11 @@ elif menu == "📋 Statistik Data":
     Setelah file diupload, aplikasi akan menghitung statistik secara otomatis.
     """)
     file = st.file_uploader(
-        "Upload CSV Statistik",
-        type=["csv"]
+    "Upload CSV Statistik",
+    type=["csv"],
+    key="statistik_csv"
     )
-
+    
     if file is not None:
 
         try:
