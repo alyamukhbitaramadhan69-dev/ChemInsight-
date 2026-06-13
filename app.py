@@ -306,14 +306,6 @@ elif menu == "🧫 Analisis Titrasi":
 
     st.header("🧫 Analisis Titrasi")
 
-    st.markdown("""
-    ### Perhitungan Normalitas dengan Titrasi
-
-    Rumus:
-
-    N₁V₁ = N₂V₂
-    """)
-
     vtitran = st.number_input(
         "Volume Titran (mL)",
         min_value=0.0
@@ -335,8 +327,7 @@ elif menu == "🧫 Analisis Titrasi":
 
         st.success(
             f"Normalitas Titrat = {ntitrat:.4f} N"
-        )
-# =====================
+        )# =====================
 # VISUALISASI
 # =====================
 
