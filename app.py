@@ -328,6 +328,7 @@ elif menu == "🧫 Analisis Titrasi":
         st.success(
             f"Normalitas Titrat = {ntitrat:.4f} N"
         )
+        
 # =====================
 # UPLOAD CSV
 # =====================
@@ -336,32 +337,18 @@ elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
 
-    st.markdown(
-        """
-        <div style="
-            background-color: rgba(255,255,255,0.1);
-            padding:15px;
-            border-radius:10px;
-            color:white;
-        ">
-        <h3>Petunjuk Upload Data</h3>
+    st.info("""
+Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
-        Upload file CSV yang berisi data hasil praktikum atau eksperimen.
+Contoh format CSV:
 
-        <br><br>
-
-        <b>Contoh format CSV:</b>
-
-        <pre>
 No,Sampel,Konsentrasi,pH
 1,A,0.10,3.5
 2,B,0.20,4.1
 3,C,0.30,4.8
-        </pre>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+
+Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
+""")
 
     file = st.file_uploader(
         "Upload File CSV",
@@ -374,6 +361,8 @@ No,Sampel,Konsentrasi,pH
             df = pd.read_csv(file)
 
             st.success("✅ File berhasil diupload")
+
+            st.subheader("Data CSV")
             st.dataframe(df)
 
         except Exception as e:
