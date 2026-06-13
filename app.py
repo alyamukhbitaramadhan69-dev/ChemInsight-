@@ -335,18 +335,18 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
-    st.info("""
+    st.markdown("""
+### Petunjuk Upload Data
+
 Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
-Contoh format:
+**Contoh format CSV:**
 
+```csv
 No,Sampel,Konsentrasi,pH
 1,A,0.10,3.5
 2,B,0.20,4.1
 3,C,0.30,4.8
-
-File harus berformat .csv
-""")
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
@@ -439,7 +439,7 @@ Pilih kolom yang akan digunakan sebagai sumbu X dan sumbu Y.
 elif menu == "📋 Statistik Data":
 
     st.header("📋 Statistik Data Laboratorium")
-    st.info("""
+   st.info("""
 Upload file CSV yang berisi data numerik untuk dianalisis.
 
 Contoh format:
