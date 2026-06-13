@@ -162,7 +162,7 @@ ChemInsight adalah aplikasi analisis dan perhitungan kimia berbasis web yang mem
 - M₁V₁ = M₂V₂
 
 #### 🧫 Analisis Titrasi
-- MaVa = MbVb
+- NaVa = NbVb
 
 #### 📁 Upload Data CSV
 Membaca dan menampilkan data eksperimen.
@@ -299,20 +299,34 @@ elif menu == "💧 Pengenceran Larutan":
         st.success(f"Volume Akhir (V2) = {v2:.2f} mL")
 
 # =====================
-# TITRASI
+# ANALISIS TITRASI
 # =====================
 
 elif menu == "🧫 Analisis Titrasi":
 
     st.header("🧫 Analisis Titrasi")
 
+    st.markdown("""
+    ### Perhitungan Normalitas dengan Titrasi
+
+    Menggunakan rumus:
+
+    N₁V₁ = N₂V₂
+
+    Keterangan:
+    - N₁ = Normalitas Asam
+    - V₁ = Volume Asam (mL)
+    - N₂ = Normalitas Basa
+    - V₂ = Volume Basa (mL)
+    """)
+
     vb = st.number_input(
         "Volume Basa (mL)",
         min_value=0.0
     )
 
-    mb = st.number_input(
-        "Molaritas Basa",
+    nb = st.number_input(
+        "Normalitas Basa (N)",
         min_value=0.0
     )
 
@@ -321,10 +335,13 @@ elif menu == "🧫 Analisis Titrasi":
         min_value=0.0001
     )
 
-    if st.button("Hitung Molaritas Asam"):
+    if st.button("Hitung Normalitas Asam"):
 
-        ma = (mb * vb) / va
-        st.success(f"Molaritas Asam = {ma:.4f} M")
+        na = (nb * vb) / va
+
+        st.success(
+            f"Normalitas Asam = {na:.4f} N"
+        )
 
 # =====================
 # UPLOAD CSV
