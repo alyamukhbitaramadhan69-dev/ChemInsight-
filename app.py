@@ -388,26 +388,27 @@ elif menu == "📁 Upload Data CSV":
 elif menu == "📈 Visualisasi Grafik":
 
     st.header("📈 Visualisasi Grafik")
-    st.info("""
-Upload file CSV yang memiliki minimal 2 kolom numerik untuk dibuat grafik.
+    st.subheader("📝 Petunjuk Visualisasi Grafik")
 
-Contoh format:
+    st.write("""
+    Upload file CSV yang memiliki minimal 2 kolom numerik untuk dibuat grafik.
 
-Waktu,Suhu:
-0,25
-10,30
-20,35
-30,40
+    Contoh data:
+    """)
 
-atau
+    st.table({
+    "Waktu": [0, 10, 20, 30],
+    "Suhu": [25, 30, 35, 40]
+    })
 
-Konsentrasi,Absorbansi:
-0.1,0.15
-0.2,0.31
-0.3,0.47
+    st.write("""
+    **Keterangan:**
+    - Kolom pertama digunakan sebagai sumbu X
+    - Kolom kedua digunakan sebagai sumbu Y
+    - Data harus berupa angka (numerik)
 
-Pilih kolom yang akan digunakan sebagai sumbu X dan sumbu Y.
-""")
+    Setelah file diupload, pilih kolom X dan Y untuk menampilkan grafik.
+    """)
     file = st.file_uploader(
         "Upload CSV",
         type=["csv"]
