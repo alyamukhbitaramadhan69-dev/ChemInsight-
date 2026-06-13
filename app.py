@@ -460,28 +460,34 @@ elif menu == "📋 Statistik Data":
 
     st.header("📋 Statistik Data Laboratorium")
 
-    st.info(
-        """
-Upload file CSV yang berisi data numerik untuk dianalisis.
+    st.subheader("📝 Petunjuk Analisis Statistik")
 
-Contoh format:
+    st.write("""
+    Upload file CSV yang berisi data numerik untuk dianalisis.
+    """)
 
-Sampel,Kadar Fe,pH:
-A:12.5,3.4
-B:13.1,3.6
-C:12.8,3.5
-D:13.4,3.7
+    st.table({
+    "Sampel": ["A", "B", "C", "D"],
+    "Kadar_Fe": [12.5, 13.1, 12.8, 13.4],
+    "pH": [3.4, 3.6, 3.5, 3.7]
+    })
 
-Aplikasi akan menampilkan:
-• Mean
-• Median
-• Standar Deviasi
-• Varians
-• Nilai Minimum
-• Nilai Maksimum
-"""
-    )
+    st.write("""
+    **Keterangan:**
+    - Sampel = Nama sampel yang dianalisis
+    - Kadar_Fe = Kadar zat besi (Fe)
+    - pH = Nilai pH sampel
 
+    **Hasil yang akan ditampilkan:**
+    - Mean (Rata-rata)
+    - Median
+    - Standar Deviasi
+    - Varians
+    - Nilai Minimum
+    - Nilai Maksimum
+
+    Setelah file diupload, aplikasi akan menghitung statistik secara otomatis.
+    """)
     file = st.file_uploader(
         "Upload CSV Statistik",
         type=["csv"]
