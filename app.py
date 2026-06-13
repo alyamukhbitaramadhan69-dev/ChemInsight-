@@ -335,6 +335,7 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
+
     st.markdown("""
 ### Petunjuk Upload Data
 
@@ -431,7 +432,7 @@ Pilih kolom yang akan digunakan sebagai sumbu X dan sumbu Y.
 
         except Exception as e:
             st.error(f"Error: {e}")
-
+            
 # =====================
 # STATISTIK
 # =====================
@@ -439,7 +440,8 @@ Pilih kolom yang akan digunakan sebagai sumbu X dan sumbu Y.
 elif menu == "📋 Statistik Data":
 
     st.header("📋 Statistik Data Laboratorium")
-   st.info("""
+
+    st.info("""
 Upload file CSV yang berisi data numerik untuk dianalisis.
 
 Contoh format:
@@ -458,6 +460,7 @@ Aplikasi akan menampilkan:
 • Nilai Minimum
 • Nilai Maksimum
 """)
+
     file = st.file_uploader(
         "Upload CSV Statistik",
         type=["csv"]
