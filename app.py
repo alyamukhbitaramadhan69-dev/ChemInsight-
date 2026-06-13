@@ -327,7 +327,31 @@ elif menu == "🧫 Analisis Titrasi":
 
         st.success(
             f"Normalitas Titrat = {ntitrat:.4f} N"
-        )# =====================
+        )
+# =====================
+# UPLOAD CSV
+# =====================
+
+elif menu == "📁 Upload Data CSV":
+
+    st.header("📁 Upload Data CSV")
+
+    file = st.file_uploader(
+        "Upload File CSV",
+        type=["csv"]
+    )
+
+    if file is not None:
+
+        try:
+            df = pd.read_csv(file)
+
+            st.dataframe(df)
+
+        except Exception as e:
+            st.error(f"Error membaca file: {e}")
+
+# =====================
 # VISUALISASI
 # =====================
 
