@@ -336,18 +336,17 @@ elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
 
-    st.markdown("""
-### Petunjuk Upload Data
+    st.write("### Petunjuk Upload Data")
+    st.write("Upload file CSV yang berisi data hasil praktikum atau eksperimen.")
 
-Upload file CSV yang berisi data hasil praktikum atau eksperimen.
-
-**Contoh format CSV:**
-
-```csv
-No,Sampel,Konsentrasi,pH
+    st.code(
+"""No,Sampel,Konsentrasi,pH
 1,A,0.10,3.5
 2,B,0.20,4.1
-3,C,0.30,4.8
+3,C,0.30,4.8""",
+        language="csv"
+    )
+
     file = st.file_uploader(
         "Upload File CSV",
         type=["csv"]
@@ -357,7 +356,6 @@ No,Sampel,Konsentrasi,pH
 
         try:
             df = pd.read_csv(file)
-
             st.dataframe(df)
 
         except Exception as e:
@@ -441,7 +439,8 @@ elif menu == "📋 Statistik Data":
 
     st.header("📋 Statistik Data Laboratorium")
 
-    st.info("""
+    st.info(
+        """
 Upload file CSV yang berisi data numerik untuk dianalisis.
 
 Contoh format:
@@ -453,13 +452,14 @@ C,12.8,3.5
 D,13.4,3.7
 
 Aplikasi akan menampilkan:
-- Mean
-- Median
-- Standar Deviasi
-- Varians
-- Nilai Minimum
-- Nilai Maksimum
-""")
+• Mean
+• Median
+• Standar Deviasi
+• Varians
+• Nilai Minimum
+• Nilai Maksimum
+"""
+    )
 
     file = st.file_uploader(
         "Upload CSV Statistik",
@@ -473,9 +473,7 @@ Aplikasi akan menampilkan:
 
             st.dataframe(df)
 
-            numerik = df.select_dtypes(
-                include=np.number
-            )
+            numerik = df.select_dtypes(include=np.number)
 
             st.subheader("Ringkasan Statistik")
             st.write(numerik.describe())
