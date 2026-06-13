@@ -336,15 +336,32 @@ elif menu == "🧫 Analisis Titrasi":
 elif menu == "📁 Upload Data CSV":
 
     st.header("📁 Upload Data CSV")
-    st.info("""
+    st.markdown("""
+### 📝 Petunjuk Upload Data
+
 Upload file CSV yang berisi data hasil praktikum atau eksperimen.
 
-Contoh format CSV:
+#### Contoh Format CSV
+""")
 
-No,Sampel,Konsentrasi,pH
+st.code(
+"""No,Sampel,Konsentrasi,pH
 1,A,0.10,3.5
 2,B,0.20,4.1
-3,C,0.30,4.8
+3,C,0.30,4.8""",
+language="csv"
+)
+
+st.success("""
+📌 Keterangan:
+
+• No = Nomor data
+
+• Sampel = Nama sampel
+
+• Konsentrasi = Konsentrasi larutan
+
+• pH = Nilai pH hasil pengukuran
 
 Setelah file diupload, data akan ditampilkan dalam bentuk tabel.
 """)
