@@ -453,12 +453,12 @@ C,12.8,3.5
 D,13.4,3.7
 
 Aplikasi akan menampilkan:
-• Mean
-• Median
-• Standar Deviasi
-• Varians
-• Nilai Minimum
-• Nilai Maksimum
+- Mean
+- Median
+- Standar Deviasi
+- Varians
+- Nilai Minimum
+- Nilai Maksimum
 """)
 
     file = st.file_uploader(
